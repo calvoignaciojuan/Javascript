@@ -1,38 +1,52 @@
+//----------------             FOR  OF   &  FOR IN   ARRAY
+{ 
+  //recorre los valores
+  const arr = ['a','b','c','d','e','f']
+  for (const iterator of arr) {
+    console.log(iterator)
+  }
+  //recorre las llaves(indices)
+  for (const iterator in arr){
+    console.log(iterator)
+  }
+  console.log(arr[0])
+  console.log(arr["0"])
 
+}
 
 
 
 //-----------------            FOREACH
+{
+  const arreglo1 = [0,1,2,3,4,5,6,7,8,9];
+  //return undefined (no retorna nada, sirve para hacer algo con cada elemento)
+  arreglo1.forEach((element,index,arr) =>{
 
-const arreglo1 = [0,1,2,3,4,5,6,7,8,9];
-//return undefined (no retorna nada, sirve para hacer algo con cada elemento)
-arreglo1.forEach((element,index,arr) =>{
-
-    console.log('element',element);
-    console.log('index',index);
-    console.log('arr',arr);
-});
-
+      console.log('element',element);
+      console.log('index',index);
+      console.log('arr',arr);
+  });
+}
 
 //------------------             MAP          
+{
+  const arreglo1 = [0,1,2,3,4,5,6,7,8,9];
+  //recorre un array y a cada elemento lo evalua con la funcion callback
+  //devuelve un nuevo array con los elementos que retorne la funcion callback enviada
 
-const arreglo2 = [0,1,2,3,4,5,6,7,8,9];
-//recorre un array y a cada elemento lo evalua con la funcion callback
-//devuelve un nuevo array con los elementos que retorne la funcion callback enviada
+  const result = arreglo2.map((element,index,arr) =>{
 
-const result = arreglo2.map((element,index,arr) =>{
-
-    console.log('element',element);
-    console.log('index',index);
-    // console.log('arr',arr);
-    if((element%2)==0){   //devuelve un arreglo con los numeros pares
-        return(element);
-    }else{
-        return(null);
-    }   
-});
-console.log(result);
-
+      console.log('element',element);
+      console.log('index',index);
+      // console.log('arr',arr);
+      if((element%2)==0){   //devuelve un arreglo con los numeros pares
+          return(element);
+      }else{
+          return(null);
+      }   
+  });
+  console.log(result);
+}
 
 //---------------------      REDUCE
 
@@ -69,3 +83,13 @@ const r = arra.every((element,index,array) =>{
 });
 
 console.log(r);
+
+
+let valor 
+
+valor?.map((element)=>{
+    return true
+})
+
+
+

@@ -1,39 +1,51 @@
-//definir directamente un objeto
-var auto = {
-  marca: "Ford",
-  modelo: "Fiesta",
-  "año": 1987,
-  mostrarColor: function() {
+//---------------------           DECLARAR UN OBJETO
+{
+  var auto = {
+    marca: "Ford",
+    modelo: "Fiesta",
+    "año": 1987,
+    mostrarColor: function() {
+        console.log(`marca: ${this.marca} modelo: ${this.modelo}`);
+    }
+  };
+  auto.mostrarColor()
 
-      console.log(`marca: ${this.marca} modelo: ${this.modelo}`);
+  //SE PUEDE ACCEDER DE 2 MANERAS
+  console.log(auto.hola)       //si no existe devuelve undefined
+  auto["marca"]               //si no existe devuelve undefined
+}
+
+//------------------------      FUNCION CONSTRUCTORA DE OBJETOS
+{
+  function auto(marca,modelo,annio){
+    this.marca = marca;
+    this.modelo = modelo;
+    this.annio = annio;
   }
-};
 
-//----------------------------------------------------------------------------------------------
-//crear una funcion constructora de objetos
-function auto(marca,modelo,annio){
-  this.marca = marca;
-  this.modelo = modelo;
-  this.annio = annio;
-}
-
-var coleccionAutos = [];
-for( var i=0; i<3; i++){
-  coleccionAutos.push(new auto(prompt("ingrese marca: "),prompt("ingrese el modelo: "), prompt("ingrese el año: ")));
+  var coleccionAutos = [];
+  for( var i=0; i<3; i++){
+    coleccionAutos.push(new auto(prompt("ingrese marca: "),prompt("ingrese el modelo: "), prompt("ingrese el año: ")));
+  }
 }
 
 
-let a = {
-  name: "juan",
-  lastname: "calvo"
-}
-let b = { 
-  name:'',
-  name2: ''
-}
-// b = a   //both are refering to the same object
-// b = {...a} //a new copy (spread operator)
+//-----------------     COPIA DE OBJETOS, SPREAD OPERATOR
+{
+  let a = {
+    name: "juan",
+    lastname: "calvo"
+  }
+  // let result = a[""] ? 'tiene' : 'no tiene'
+  console.log(a["hola"] )
 
+  let b = { 
+    name:'',
+    name2: ''
+  }
+  // b = a   //both are refering to the same object
+  // b = {...a} //a new copy (spread operator)
+}
 
 console.log(a)
 console.log(b)

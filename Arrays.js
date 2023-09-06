@@ -11,7 +11,6 @@
   }
   console.log(arr[0])
   console.log(arr["0"])
-
 }
 
 //-----------------        METODOS BASICOS
@@ -88,6 +87,20 @@
   console.log(result)
 }
 
+//---------------------        FIND INDEX
+//devuelve posicion del primer elemento donde el callback retorna true
+//si ninguno cumple devuelve -1
+{
+  const arr = [
+    {nombre:'juan',edad:32},
+    {nombre:'pepe',edad:30},
+    {nombre:'carlos',edad:32}
+  ]
+  const index = arr.findIndex( (element,index,array) => {
+    return element.edad === 32
+  })
+  console.log(index)
+}
 //------------------             MAP          
 //recorre un array y a cada elemento lo evalua con la funcion callback
 //devuelve un nuevo array con los elementos que retorne la funcion callback

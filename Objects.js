@@ -30,21 +30,35 @@
 }
 
 
-//-----------------     COPIA DE OBJETOS, SPREAD OPERATOR
+//-----------    SPREAD OPERATOR - COPIA DE OBJETOS, 
 {
-  let a = {
-    name: "juan",
-    lastname: "calvo"
+  let persona1 = {
+    name: "nombre1",
+    lastname: "apellido1"
   }
   // let result = a[""] ? 'tiene' : 'no tiene'
-  console.log(a["hola"] )
+  console.log(persona1["name"] )
 
-  let b = { 
-    name:'',
-    name2: ''
+  let persona2 = { 
+    name:'nombre2',
+    lastname: 'apellido2'
   }
-  // b = a   //both are refering to the same object
-  // b = {...a} //a new copy (spread operator)
+  // persona1 = persona2   //both are refering to the same object
+  // persona1 = {...persona2} //a new copy (spread operator)
+  
+  // SI TIENE PROPIEDADES EN COMUN PREVALECEN LAS DEL SEGUNDO OBJETO, EL OBJETO RESULTANDO TIENE TODAS LAS PROPIEDADES QUE NO SE REPITEN
+  let persona3 = {
+    ...persona1,
+    ...persona2
+  }
+  console.log({...persona1})
+  console.log(persona3)
+}
+
+// -----------------    REST OPERATOR
+{
+
+  
 }
 
 console.log(a)
@@ -63,7 +77,8 @@ let pepe = "hola"
 }
 
 
-//----------------             FOR  OF(object no es iterable, no funciona)   &  FOR IN   OBJECT (se usaba antes de ES6 ahora no es buena practica, hay que usar hasOwnProperty para asegurarse que la propiedad es del objeto y no del prototipo)
+//----------------   FOR  OF(object no es iterable, no funciona)   &  FOR IN   OBJECT (se usaba antes de ES6 ahora no es buena practica,
+// hay que usar hasOwnProperty para asegurarse que la propiedad es del objeto y no del prototipo)
 { 
   const obj = {
     a: 'h',
